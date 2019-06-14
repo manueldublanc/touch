@@ -31,7 +31,7 @@ pre { width: 100%; overflow: auto; background: #eee; }
     if (window.matchMedia &amp;&amp; window.matchMedia("(any-pointer:coarse)").matches) {
       // check for any-pointer:coarse which mostly means touchscreen
       result = true;
-    } else if (window.TouchEvent || ('ontouchstart' in window)) {
+    } else if (window.TouchEvent && ('ontouchstart' in window)) {
       // last resort - check for exposed touch events API / event handler
       result = true;
     }
@@ -61,7 +61,7 @@ function detectTouchscreen() {
     if (window.matchMedia && window.matchMedia("(any-pointer:coarse)").matches) {
       // check for any-pointer:coarse which mostly means touchscreen
       result = true;
-    } else if (window.TouchEvent || ('ontouchstart' in window)) {
+    } else if (window.TouchEvent && ('ontouchstart' in window)) {
       // last resort - check for exposed touch events API / event handler
       result = true;
     }
